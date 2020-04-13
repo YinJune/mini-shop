@@ -1,0 +1,9 @@
+server:
+  port: 10001
+  servlet:
+    context-path: /shop
+spring:
+  application:
+    name: mini-shop
+  profiles:
+    active: dev
