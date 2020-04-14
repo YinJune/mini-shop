@@ -2,5 +2,17 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mini-shop?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-      username: root
-      password: 123456
+    username: root
+    password: 123456
+  redis:
+    host: 47.102.208.223
+    password:
+    database: 0
+wx:
+  miniapp:
+    configs:
+      - appid: #微信小程序的appid
+        secret: #微信小程序的Secret
+        token: #微信小程序消息服务器配置的token
+        aesKey: #微信小程序消息服务器配置的EncodingAESKey
+        msgDataFormat: JSON
