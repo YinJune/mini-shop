@@ -33,24 +33,24 @@ public interface UserAddressService extends IService<UserAddress> {
     /**
      * 转换省份编码
      *
-     * @param province
+     * @param provinceCode
      * @return
      */
-    String convertProvince(String province);
+    String convertProvince(String provinceCode);
 
     /**
      * 转换城市编码
      *
-     * @param city
+     * @param cityCode
      * @return
      */
-    String convertCity(String city);
+    String convertCity(String cityCode);
 
     /**
      * 转换区域编码
      *
-     * @param district
+     * @param districtCode
      * @return
      */
-    String convertDistrict(String district);
+    String convertDistrict(String districtCode);
 }

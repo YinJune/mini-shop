@@ -44,6 +44,7 @@ public class AddressController {
         resultInfo.setData(addressList);
         return resultInfo;
     }
+
     /**
      * 收货地址详情
      *
@@ -52,16 +53,16 @@ public class AddressController {
      */
     @TraceLog(desc = "收货地址详情")
     @GetMapping("/user/address/detail")
-    public ResultInfo getUserAddressDetail(HttpServletRequest request, @RequestParam("addressId")Integer addressId) {
+    public ResultInfo getUserAddressDetail(HttpServletRequest request, @RequestParam("addressId") Integer addressId) {
         ResultInfo resultInfo = new ResultInfo();
         Integer userId = (Integer) request.getAttribute("userId");
         logger.info("收货地址列表:{}", userId);
         UserAddress address = addressService.getById(addressId);
-        AddressVO addressVO=new AddressVO();
-        BeanUtils.copyProperties(address,addressVO);
-        addressVO.setProvinceWord(addressService.convertProvince(addressVO.getProvince()));
-        addressVO.setCityWord(addressService.convertCity(addressVO.getCity()));
-        addressVO.setDistrictWord(addressService.convertDistrict(addressVO.getDistrict()));
+        AddressVO addressVO = new AddressVO();
+        BeanUtils.copyProperties(address, addressVO);
+        addressVO.setProvinceWord(addressService.convertProvince(addressVO.getProvinceCode()));
+        addressVO.setCityWord(addressService.convertCity(addressVO.getCityCode()));
+        addressVO.setDistrictWord(addressService.convertDistrict(addressVO.getDistrictCode()));
         resultInfo.setData(addressVO);
         return resultInfo;
     }
@@ -82,6 +83,4 @@ public class AddressController {
         addressService.addOrUpdateAddress(addressDTO);
         return resultInfo;
     }
-
-
 }

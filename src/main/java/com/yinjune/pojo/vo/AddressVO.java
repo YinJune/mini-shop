@@ -12,9 +12,9 @@ public class AddressVO {
     private Integer id;
     private String recipientName;
     private String recipientPhone;
-    private String province;
-    private String city;
-    private String district;
+    private String provinceCode;
+    private String cityCode;
+    private String districtCode;
     private String addressDetail;
     /**
      * 是否是默认地址
